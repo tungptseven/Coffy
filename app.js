@@ -23,6 +23,7 @@ app.post('/find/near',(req,res)=>{
         uR = req.body['r'];
     let results = search.findLoc(uLat,uLong,uType,uR);
     console.log(results);
+    res.json(results);
 });
 
 app.post('/find/dist',(req,res)=>{
@@ -30,6 +31,7 @@ app.post('/find/dist',(req,res)=>{
         district = req.body['district'];
     let results = search.findLocInDistrict(type,district);
     console.log(results);
+    res.json(results);
 });
 
 /*app.post('/listAll', function (req, res) {
