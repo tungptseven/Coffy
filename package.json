@@ -17,16 +17,16 @@
   },
   "homepage": "https://github.com/tungptseven/Coffy#readme",
   "dependencies": {
-<<<<<<< HEAD
+
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
     "csv-parse": "^1.2.0",
     "express": "^4.15.2",
     "pg-monitor": "^0.7.1",
     "pg-promise": "^5.6.4"
-=======
+
     "body-parser": "^1.17.1",
     "express": "^4.15.2"
->>>>>>> adbaa74ed87397a23f31990cc3f27e02cdda3921
+
   }
 }
