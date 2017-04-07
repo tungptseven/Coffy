@@ -15,18 +15,18 @@ class Location {
 
 
 /*let data = [
-    1000, 'Cora Cafe', '24 Hòa Mã', '07:00 AM - 11:00 PM', 7.2, 21.01583815, 105.8561032,
-    1001, 'Pattern Coffee', "108 K2 Bách Khoa, Ngõ 48 Tạ Quang Bửu", '07:00 AM - 10:00 PM', 7.5, 21.001128, 105.849237,
-    1002, 'Starbucks Coffee', '314 Bà Triệu,Hai Bà Trưng', '07:00 AM - 11:30 PM', 7.9, 21.01068, 105.849047,
-    1003, 'Kàffe Cây Xăng', "101 E5, Ngõ 29 Tạ Quang Bửu", '08:00 AM - 11:00 PM', 7.1, 21.00184004, 105.8494467,
-    1004, 'Greecy - Coffee & Cake', '10 Ngõ 84 Trần Đại Nghĩa', "08:00 AM - 11:00 PM", 6.6, 20.99939609, 105.8453174,
-    1005, 'Urban Station Coffee Takeaway', '61 Quang Trung', '07:00 AM - 10:00 PM', 7.6, 21.017249, 105.847081,
-    1006, 'Bay Coffee & Tea', '48 Nguyễn Bỉnh Khiêm', "08:00 AM - 11:00 PM", 7.1, 21.015371, 105.848556,
-    1007, 'Highlands Coffee - Vincom Bà Triệu', "Tầng 1, Vincom Bà Triệu, 191 Bà Triệu", "08:00 AM - 10:00 PM", 7.3, 21.011441, 105.850038,
-    1008, 'Anh Hòa Bakery & Coffee', '48 Trần Đại Nghĩa', '07:00 AM - 11:00 PM', 6.4, 21.00171484, 105.8449808,
-    1009, 'Fika Café', '50 Lò Đúc', '07:00 AM - 11:00 PM', 7.5, 21.01608, 105.8563678,
-    1010, 'Sky1991 - Coffee & Hot Dog', '111K2 Ngõ 48 Tạ Quang Bửu', "08:00 AM - 11:00 PM", 7.0, 21.00098366, 105.8490054
-];*/
+ 1000, 'Cora Cafe', '24 Hòa Mã', '07:00 AM - 11:00 PM', 7.2, 21.01583815, 105.8561032,
+ 1001, 'Pattern Coffee', "108 K2 Bách Khoa, Ngõ 48 Tạ Quang Bửu", '07:00 AM - 10:00 PM', 7.5, 21.001128, 105.849237,
+ 1002, 'Starbucks Coffee', '314 Bà Triệu,Hai Bà Trưng', '07:00 AM - 11:30 PM', 7.9, 21.01068, 105.849047,
+ 1003, 'Kàffe Cây Xăng', "101 E5, Ngõ 29 Tạ Quang Bửu", '08:00 AM - 11:00 PM', 7.1, 21.00184004, 105.8494467,
+ 1004, 'Greecy - Coffee & Cake', '10 Ngõ 84 Trần Đại Nghĩa', "08:00 AM - 11:00 PM", 6.6, 20.99939609, 105.8453174,
+ 1005, 'Urban Station Coffee Takeaway', '61 Quang Trung', '07:00 AM - 10:00 PM', 7.6, 21.017249, 105.847081,
+ 1006, 'Bay Coffee & Tea', '48 Nguyễn Bỉnh Khiêm', "08:00 AM - 11:00 PM", 7.1, 21.015371, 105.848556,
+ 1007, 'Highlands Coffee - Vincom Bà Triệu', "Tầng 1, Vincom Bà Triệu, 191 Bà Triệu", "08:00 AM - 10:00 PM", 7.3, 21.011441, 105.850038,
+ 1008, 'Anh Hòa Bakery & Coffee', '48 Trần Đại Nghĩa', '07:00 AM - 11:00 PM', 6.4, 21.00171484, 105.8449808,
+ 1009, 'Fika Café', '50 Lò Đúc', '07:00 AM - 11:00 PM', 7.5, 21.01608, 105.8563678,
+ 1010, 'Sky1991 - Coffee & Hot Dog', '111K2 Ngõ 48 Tạ Quang Bửu', "08:00 AM - 11:00 PM", 7.0, 21.00098366, 105.8490054
+ ];*/
 
 let loc = new Location(1000, 'Cora Cafe', '24 Hòa Mã', '07:00 AM - 11:00 PM', 7.2, 21.01583815, 105.8561032);
 let loc1 = new Location(1001, 'Pattern Coffee', "108 K2 Bách Khoa, Ngõ 48 Tạ Quang Bửu", '07:00 AM - 10:00 PM', 7.5, 21.001128, 105.849237);
@@ -42,6 +42,7 @@ let loc10 = new Location(1010, 'Sky1991 - Coffee & Hot Dog', '111K2 Ngõ 48 Tạ
 
 //console.log(loc,loc1,loc2,loc3,loc4,loc5,loc6,loc7,loc8,loc9,loc10);
 let locations = [loc, loc1, loc2, loc3, loc4, loc5, loc6, loc7, loc8, loc9, loc10];
+
 //console.log(locations);
 
 function haversine() {
@@ -59,16 +60,25 @@ function haversine() {
 //console.log(haversine( 21.015208, 105.847244,21.027061, 105.819490));
 
 /*let lat = 21.015208;
-let long = 105.847244;*/
+ let long = 105.847244;*/
 
 //console.log(haversine(loc9.lat,loc9.long,lat,long));
 
 function findLocation(lat, long, distance) {
-    for (let i =0; i < locations.length; i++){
+    let result = [];
+    for (let i = 0; i < locations.length; i++) {
         if (haversine(locations[i].lat, locations[i].long, lat, long) <= distance) {
-            console.log(locations[i]);
+            //console.log(locations[i]);
+            result.push(locations[i]);
+
         }
+
     }
+    console.log(result);
+    return result;
+
 }
 
-findLocation(21.014816,105.846335,1);
+exports.findBasic = findLocation;
+
+//findLocation(21.014816,105.846335,1);
