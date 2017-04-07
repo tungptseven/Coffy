@@ -27,7 +27,7 @@ app.post('/find/near', (req, res) => {
         uR = req.body['r'];
 
     let db = promise.db;
-    db.any("SELECT name, address, district FROM public.location WHERE ST_DWithin(geog, ST_Point(${uLong}, ${uLat})::geography, ${uR}) AND type = ${uType};", {
+    db.any("SELECT id, name, address, district, octime, rate, lat, long, type FROM public.location WHERE ST_DWithin(geog, ST_Point(${uLong}, ${uLat})::geography, ${uR}) AND type = ${uType};", {
         uLong: uLong,
         uLat: uLat,
         uR: uR,
@@ -51,7 +51,7 @@ app.post('/find/dist', (req, res) => {
     let type = req.body['type'],
         district = req.body['district'];
     let db = promise.db;
-    db.any("SELECT name, address, district FROM public.location WHERE type = ${type} AND district = ${district};", {
+    db.any("SELECT id, name, address, district, octime, rate, lat, long, type FROM public.location WHERE type = ${type} AND district = ${district};", {
         district: district,
         type: type
     })
