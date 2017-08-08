@@ -30,3 +30,5 @@ Kết quả trả về danh sách địa điểm trong bán kính cần tìm (đ
 npm install
 node app.js
 ```
+## Thêm dữ liệu 
+https://tungptseven.gitbooks.io/set-up-db/content/
